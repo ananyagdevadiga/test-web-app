@@ -1,30 +1,24 @@
-// Simple shared user storage (localStorage for persistence across pages)
-let users = JSON.parse(localStorage.getItem('users')) || {};
+function login(){
 
-function handleLogin() {
-    const username = document.getElementById('loginUsername').value;
-    const password = document.getElementById('loginPassword').value;
-    
-    if (users[username] && users[username] === password) {
-        alert('Login successful! Welcome back, ' + username + '!');
-        window.location.href = 'index.html';
-    } else {
-        alert('Invalid username or password!');
+    let username = document.getElementById("username").value
+    let password = document.getElementById("password").value
+
+    // BUG: login allowed with empty fields
+    if(username === "admin" && password === "1234"){
+        document.getElementById("message").innerText = "Login Successful"
+    }
+    else{
+        document.getElementById("message").innerText = "Invalid Credentials"
     }
 }
 
-function handleSignup() {
-    const username = document.getElementById('signupUsername').value;
-    const email = document.getElementById('signupEmail').value;
-    const password = document.getElementById('signupPassword').value;
-    
-    if (users[username]) {
-        alert('Username already exists!');
-        return;
-    }
-    
-    users[username] = password;
-    localStorage.setItem('users', JSON.stringify(users));
-    alert('Sign up successful! You can now login.');
-    window.location.href = 'login.html';
+
+function signup(){
+
+    let user = document.getElementById("newuser").value
+    let pass = document.getElementById("newpass").value
+
+    document.getElementById("signupMessage").innerText =
+        "Account created for " + user
+
 }
