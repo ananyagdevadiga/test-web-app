@@ -1,31 +1,27 @@
 body{
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background: gray;
 }
 
-.container{
-    width: 800px;
-    margin: auto;
+.login-box{
     background: white;
-    padding: 20px;
-    margin-top: 100px;
-    border-radius: 10px;
+    width: 400px;
+    padding: 5px;
 }
 
 input{
-    display: block;
-    width: 500px;
-    padding: 10px;
-    margin-bottom: 10px;
+    width: 200px;
+    margin: 2px;
 }
 
 button{
-    padding: 10px 20px;
     background: blue;
     color: white;
-    border: none;
 }
 
 h1{
-    text-align: left;
+    color: black;
+}
+
+#message{
+    color: red;
 }
