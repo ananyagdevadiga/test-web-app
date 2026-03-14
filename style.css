@@ -1,24 +1,28 @@
-function login(){
-
-    let username = document.getElementById("username").value
-    let password = document.getElementById("password").value
-
-    // BUG: login allowed with empty fields
-    if(username === "admin" && password === "1234"){
-        document.getElementById("message").innerText = "Login Successful"
-    }
-    else{
-        document.getElementById("message").innerText = "Invalid Credentials"
-    }
+body{
+    background: gray;
+    font-family: Arial;
 }
 
+.container{
+    background: white;
+    width: 300px;
+    padding: 10px;
+}
 
-function signup(){
+input{
+    width: 150px;
+    margin: 3px;
+}
 
-    let user = document.getElementById("newuser").value
-    let pass = document.getElementById("newpass").value
+button{
+    background: blue;
+    color: white;
+}
 
-    document.getElementById("signupMessage").innerText =
-        "Account created for " + user
+h1{
+    color: black;
+}
 
+p{
+    color: red;
 }
