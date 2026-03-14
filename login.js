@@ -1,19 +1,25 @@
-import { validateLoginForm } from './validator.js';
+import React from 'react';
+import './login.css';
 
-function handleLoginSubmit(event) {
-  event.preventDefault();
-  
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-  
-  const validation = validateLoginForm(username, password);
-  if (!validation.isValid) {
-    alert(validation.message);
-    return;
-  }
-  
-  // Existing authentication logic
-  authenticateUser(username, password);
-}
+const Login = () => {
+  return (
+    <div className="login-container">
+      <div className="login-form">
+        <h2>Login</h2>
+        <form>
+          <div className="form-group">
+            <label htmlFor="username">Username</label>
+            <input type="text" id="username" placeholder="Enter username" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password" />
+          </div>
+          <button type="submit" className="login-button">Login</button>
+        </form>
+      </div>
+    </div>
+  );
+};
 
-document.getElementById('loginForm').addEventListener('submit', handleLoginSubmit);
+export default Login;
